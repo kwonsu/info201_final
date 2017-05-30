@@ -1,8 +1,10 @@
 library(shiny)
 library(plotly)
+library(ggplot2)
 
+source("./script/sujin.R")
 # Define UI for random distribution application 
-fluidPage(
+shinyUI(fluidPage(
   
   # Application title
   titlePanel("Gender vs Characteristic"),
@@ -20,9 +22,10 @@ fluidPage(
     # of the generated distribution
     mainPanel(
       tabsetPanel(type = "tabs", 
-                  tabPanel("Plot", plotOutput("circular")), 
+                  tabPanel("Plot", plotOutput("circularPlot")), 
                   tabPanel("Summary", verbatimTextOutput("summary"))
       )
     )
   )
-)
+))
+

@@ -1,6 +1,7 @@
-
+library(shiny)
 library(plotly)
 library(dplyr)
+library(ggplot2)
 
 source("./script/sujin.R")
 
@@ -8,9 +9,8 @@ marvel.data <- read.csv("data/marvel-wikia-data.csv")
 dc.data <- read.csv("data/dc-wikia-data.csv", stringsAsFactors = FALSE)
 
 shinyServer(function(input, output) {
-  output$circular <- renderPlotly({
+  output$circularPlot <- renderPlotly({
     char_selected <- input$char
-    p <- GenderCharacteristic(marvel.data,char_selected)
-    return(p)
+    return(GenderCharacteristic(marvel.data,char_selected))
   })
 })

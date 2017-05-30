@@ -56,7 +56,9 @@ GenderCharacteristic <- function(dataset, char) {
     geom_text(data = pcnt, hjust = 1, size = 3, aes(x = Gender, y = 0, label = Gender)) +
     
     #Remove useless legend, y axis ticks and y axis text
-    theme(legend.position = "none" , axis.text.y = element_blank() , axis.ticks = element_blank())
+    theme(legend.position = "none" , axis.text.y = element_blank() , axis.ticks = element_blank()) +
+    
+    ggtitle(paste("Proportion of each gender for ",as.character(char), "Characteristic"))
   
   return(circular)
 }
